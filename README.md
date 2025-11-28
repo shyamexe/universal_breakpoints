@@ -12,6 +12,10 @@ A simple, reusable, and platform-independent screen size breakpoints package for
 - **Orientation Detection**: Portrait/landscape and aspect ratio helpers
 - **Singleton Pattern**: Single instance for consistent state across your app
 
+## 🎨 Demo
+
+Check out the **[Live Demo](https://shyamexe.github.io/universal_breakpoints/)** to see Universal Breakpoints in action!
+
 ## 🚀 Getting Started
 
 ### Installation
