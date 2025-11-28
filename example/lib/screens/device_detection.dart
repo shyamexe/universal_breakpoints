@@ -15,9 +15,9 @@ class DeviceDetection extends StatelessWidget {
             Text(
               'Device Detection',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 24.sH),
             _buildDetectionCard(context),
@@ -44,9 +44,9 @@ class DeviceDetection extends StatelessWidget {
             Text(
               'Usage Guide',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildGuideItem(
@@ -78,21 +78,17 @@ class DeviceDetection extends StatelessWidget {
     );
   }
 
-  Widget _buildGuideItem(
-    BuildContext context,
-    String title,
-    String code,
-  ) {
+  Widget _buildGuideItem(BuildContext context, String title, String code) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 13.sF,
-                fontWeight: FontWeight.bold,
-                color: Colors.grey.shade900,
-              ),
+            fontSize: 13.sF,
+            fontWeight: FontWeight.bold,
+            color: Colors.grey.shade900,
+          ),
         ),
         SizedBox(height: 6.sH),
         Container(
@@ -106,10 +102,10 @@ class DeviceDetection extends StatelessWidget {
           child: Text(
             code,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  fontSize: 10.sF,
-                  color: Colors.grey.shade900,
-                  fontFamily: 'monospace',
-                ),
+              fontSize: 10.sF,
+              color: Colors.grey.shade900,
+              fontFamily: 'monospace',
+            ),
           ),
         ),
       ],
@@ -126,9 +122,9 @@ class DeviceDetection extends StatelessWidget {
             Text(
               'Device Type Detection',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildDetectionItem(
@@ -204,16 +200,16 @@ class DeviceDetection extends StatelessWidget {
                   Text(
                     label,
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 14.sF,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontSize: 14.sF,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     description,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 12.sF,
-                          color: Colors.grey[600],
-                        ),
+                      fontSize: 12.sF,
+                      color: Colors.grey[600],
+                    ),
                   ),
                 ],
               ),
@@ -230,10 +226,10 @@ class DeviceDetection extends StatelessWidget {
               child: Text(
                 value ? 'YES' : 'NO',
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                      fontSize: 12.sF,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  fontSize: 12.sF,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],
@@ -254,9 +250,9 @@ class DeviceDetection extends StatelessWidget {
             Text(
               'Ultra-Granular Sub-Category',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             Container(
@@ -277,18 +273,18 @@ class DeviceDetection extends StatelessWidget {
                         )
                         .trim(),
                     style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                          fontSize: 20.sF,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade900,
-                        ),
+                      fontSize: 20.sF,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue.shade900,
+                    ),
                   ),
                   SizedBox(height: 8.sH),
                   Text(
                     'Current device classification',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 12.sF,
-                          color: Colors.grey[600],
-                        ),
+                      fontSize: 12.sF,
+                      color: Colors.grey[600],
+                    ),
                   ),
                 ],
               ),
@@ -298,25 +294,81 @@ class DeviceDetection extends StatelessWidget {
               spacing: 8.sW,
               runSpacing: 8.sH,
               children: [
-                _buildCategoryBadge(context, 'Ultra Compact', context.isUltraCompact),
-                _buildCategoryBadge(context, 'Compact Phone', context.isCompactPhone),
-                _buildCategoryBadge(context, 'Standard Phone', context.isStandardPhone),
-                _buildCategoryBadge(context, 'Large Phone', context.isLargePhone),
+                _buildCategoryBadge(
+                  context,
+                  'Ultra Compact',
+                  context.isUltraCompact,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Compact Phone',
+                  context.isCompactPhone,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Standard Phone',
+                  context.isStandardPhone,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Large Phone',
+                  context.isLargePhone,
+                ),
                 _buildCategoryBadge(context, 'Phablet', context.isPhablet),
-                _buildCategoryBadge(context, 'Small Tablet', context.isSmallTablet),
-                _buildCategoryBadge(context, 'Standard Tablet', context.isStandardTablet),
-                _buildCategoryBadge(context, 'Large Tablet', context.isLargeTablet),
-                _buildCategoryBadge(context, 'Extra Large Tablet', context.isExtraLargeTablet),
-                _buildCategoryBadge(context, 'Small Desktop', context.isSmallDesktop),
-                _buildCategoryBadge(context, 'Standard Desktop', context.isStandardDesktop),
-                _buildCategoryBadge(context, 'Large Desktop', context.isLargeDesktop),
-                _buildCategoryBadge(context, 'Extra Large Desktop', context.isExtraLargeDesktop),
-                _buildCategoryBadge(context, 'Widescreen', context.isWidescreen),
+                _buildCategoryBadge(
+                  context,
+                  'Small Tablet',
+                  context.isSmallTablet,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Standard Tablet',
+                  context.isStandardTablet,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Large Tablet',
+                  context.isLargeTablet,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Extra Large Tablet',
+                  context.isExtraLargeTablet,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Small Desktop',
+                  context.isSmallDesktop,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Standard Desktop',
+                  context.isStandardDesktop,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Large Desktop',
+                  context.isLargeDesktop,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Extra Large Desktop',
+                  context.isExtraLargeDesktop,
+                ),
+                _buildCategoryBadge(
+                  context,
+                  'Widescreen',
+                  context.isWidescreen,
+                ),
                 _buildCategoryBadge(context, 'Full HD', context.isFullHD),
                 _buildCategoryBadge(context, 'QHD', context.isQHD),
                 _buildCategoryBadge(context, 'Ultra Wide', context.isUltraWide),
                 _buildCategoryBadge(context, 'Ultra HD', context.isUltraHD),
-                _buildCategoryBadge(context, 'Super Ultra Wide', context.isSuperUltraWide),
+                _buildCategoryBadge(
+                  context,
+                  'Super Ultra Wide',
+                  context.isSuperUltraWide,
+                ),
               ],
             ),
           ],
@@ -325,12 +377,13 @@ class DeviceDetection extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryBadge(BuildContext context, String label, bool isActive) {
+  Widget _buildCategoryBadge(
+    BuildContext context,
+    String label,
+    bool isActive,
+  ) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 12.0.sW,
-        vertical: 8.0.sH,
-      ),
+      padding: EdgeInsets.symmetric(horizontal: 12.0.sW, vertical: 8.0.sH),
       decoration: BoxDecoration(
         color: isActive ? Colors.blue : Colors.grey.shade200,
         borderRadius: BorderRadius.circular(16),
@@ -342,10 +395,10 @@ class DeviceDetection extends StatelessWidget {
       child: Text(
         label,
         style: Theme.of(context).textTheme.labelSmall?.copyWith(
-              fontSize: 11.sF,
-              color: isActive ? Colors.white : Colors.grey.shade700,
-              fontWeight: FontWeight.bold,
-            ),
+          fontSize: 11.sF,
+          color: isActive ? Colors.white : Colors.grey.shade700,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
@@ -360,9 +413,9 @@ class DeviceDetection extends StatelessWidget {
             Text(
               'Orientation & Aspect Ratio',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildDetectionItem(
@@ -406,9 +459,9 @@ class DeviceDetection extends StatelessWidget {
               child: Text(
                 'Aspect Ratio: ${context.sizeConfig.aspectRatio.toStringAsFixed(2)}',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontSize: 14.sF,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  fontSize: 14.sF,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

@@ -242,8 +242,7 @@ class UniversalBreakpoints {
       screenSizeCategory == ScreenSizeCategory.lg;
 
   /// Returns true if the device is a desktop (1280+px width)
-  bool get isDesktop =>
-      screenSizeCategory.index >= ScreenSizeCategory.xl.index;
+  bool get isDesktop => screenSizeCategory.index >= ScreenSizeCategory.xl.index;
 
   /// Returns true if the device is a large screen (1440+px width)
   bool get isLargeScreen =>

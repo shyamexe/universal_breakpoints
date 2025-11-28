@@ -12,10 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWrapper(
-      config: ResponsiveWrapperConfig(
-        autoInitialize: true,
-        debugPrint: false,
-      ),
+      config: ResponsiveWrapperConfig(autoInitialize: true, debugPrint: false),
       child: MaterialApp(
         title: 'Universal Breakpoints Demo',
         theme: ThemeData(

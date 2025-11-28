@@ -15,9 +15,9 @@ class AdvancedExamples extends StatelessWidget {
             Text(
               'Advanced Examples',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 24.sH),
             _buildResponsiveValueExample(context),
@@ -47,9 +47,9 @@ class AdvancedExamples extends StatelessWidget {
             Text(
               'Best Practices',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildPracticeItem(
@@ -98,18 +98,18 @@ class AdvancedExamples extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 13.sF,
-                fontWeight: FontWeight.bold,
-                color: Colors.purple.shade900,
-              ),
+            fontSize: 13.sF,
+            fontWeight: FontWeight.bold,
+            color: Colors.purple.shade900,
+          ),
         ),
         SizedBox(height: 4.sH),
         Text(
           description,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontSize: 11.sF,
-                color: Colors.grey.shade700,
-              ),
+            fontSize: 11.sF,
+            color: Colors.grey.shade700,
+          ),
         ),
       ],
     );
@@ -138,17 +138,17 @@ class AdvancedExamples extends StatelessWidget {
             Text(
               'Responsive Value Helper',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 4.sH),
             Text(
               'Using responsiveValue<T>() to adapt grid and spacing',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 12.sF,
-                    color: Colors.grey[600],
-                  ),
+                fontSize: 12.sF,
+                color: Colors.grey[600],
+              ),
             ),
             SizedBox(height: 16.sH),
             Container(
@@ -164,16 +164,16 @@ class AdvancedExamples extends StatelessWidget {
                   Text(
                     'Columns: $columns',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 14.sF,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontSize: 14.sF,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Text(
                     'Spacing: ${spacing.toStringAsFixed(1)}',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 14.sF,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontSize: 14.sF,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
@@ -197,10 +197,8 @@ class AdvancedExamples extends StatelessWidget {
                   child: Center(
                     child: Text(
                       '${index + 1}',
-                      style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                            color: Colors.white,
-                            fontSize: 16.sF,
-                          ),
+                      style: Theme.of(context).textTheme.headlineSmall
+                          ?.copyWith(color: Colors.white, fontSize: 16.sF),
                     ),
                   ),
                 ),
@@ -222,17 +220,17 @@ class AdvancedExamples extends StatelessWidget {
             Text(
               'Adaptive Navigation',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 4.sH),
             Text(
               'Navigation changes based on device type',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 12.sF,
-                    color: Colors.grey[600],
-                  ),
+                fontSize: 12.sF,
+                color: Colors.grey[600],
+              ),
             ),
             SizedBox(height: 16.sH),
             Container(
@@ -241,52 +239,65 @@ class AdvancedExamples extends StatelessWidget {
                 color: Colors.grey.shade100,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: context.isMobile
-                  ? SizedBox(
-                      height: 48.sH,
-                      child: Center(
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              _buildNavButton(context, Icons.home, 'Home'),
-                              SizedBox(width: 8.sW),
-                              _buildNavButton(context, Icons.explore, 'Explore'),
-                              SizedBox(width: 8.sW),
-                              _buildNavButton(context, Icons.favorite, 'Saved'),
-                              SizedBox(width: 8.sW),
-                              _buildNavButton(context, Icons.person, 'Profile'),
-                            ],
+              child:
+                  context.isMobile
+                      ? SizedBox(
+                        height: 48.sH,
+                        child: Center(
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                _buildNavButton(context, Icons.home, 'Home'),
+                                SizedBox(width: 8.sW),
+                                _buildNavButton(
+                                  context,
+                                  Icons.explore,
+                                  'Explore',
+                                ),
+                                SizedBox(width: 8.sW),
+                                _buildNavButton(
+                                  context,
+                                  Icons.favorite,
+                                  'Saved',
+                                ),
+                                SizedBox(width: 8.sW),
+                                _buildNavButton(
+                                  context,
+                                  Icons.person,
+                                  'Profile',
+                                ),
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    )
-                  : context.isTablet
+                      )
+                      : context.isTablet
                       ? SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            children: [
-                              _buildNavChip(context, Icons.home, 'Home'),
-                              SizedBox(width: 8.sW),
-                              _buildNavChip(context, Icons.explore, 'Explore'),
-                              SizedBox(width: 8.sW),
-                              _buildNavChip(context, Icons.favorite, 'Saved'),
-                              SizedBox(width: 8.sW),
-                              _buildNavChip(context, Icons.person, 'Profile'),
-                            ],
-                          ),
-                        )
-                      : Wrap(
-                          spacing: 12.sW,
-                          runSpacing: 8.sH,
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
                           children: [
                             _buildNavChip(context, Icons.home, 'Home'),
+                            SizedBox(width: 8.sW),
                             _buildNavChip(context, Icons.explore, 'Explore'),
+                            SizedBox(width: 8.sW),
                             _buildNavChip(context, Icons.favorite, 'Saved'),
+                            SizedBox(width: 8.sW),
                             _buildNavChip(context, Icons.person, 'Profile'),
                           ],
                         ),
+                      )
+                      : Wrap(
+                        spacing: 12.sW,
+                        runSpacing: 8.sH,
+                        children: [
+                          _buildNavChip(context, Icons.home, 'Home'),
+                          _buildNavChip(context, Icons.explore, 'Explore'),
+                          _buildNavChip(context, Icons.favorite, 'Saved'),
+                          _buildNavChip(context, Icons.person, 'Profile'),
+                        ],
+                      ),
             ),
           ],
         ),
@@ -320,9 +331,9 @@ class AdvancedExamples extends StatelessWidget {
           Text(
             label,
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  fontSize: 12.sF,
-                  color: Colors.white,
-                ),
+              fontSize: 12.sF,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
@@ -339,17 +350,17 @@ class AdvancedExamples extends StatelessWidget {
             Text(
               'Complex Grid Layout',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 4.sH),
             Text(
               'Adaptive grid with different aspect ratios',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 12.sF,
-                    color: Colors.grey[600],
-                  ),
+                fontSize: 12.sF,
+                color: Colors.grey[600],
+              ),
             ),
             SizedBox(height: 16.sH),
             GridView.builder(
@@ -398,21 +409,12 @@ class AdvancedExamples extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          Icons.image,
-                          size: 32.sF,
-                          color: Colors.white,
-                        ),
+                        Icon(Icons.image, size: 32.sF, color: Colors.white),
                         SizedBox(height: 8.sH),
                         Text(
                           'Item ${index + 1}',
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodySmall
-                              ?.copyWith(
-                                fontSize: 12.sF,
-                                color: Colors.white,
-                              ),
+                          style: Theme.of(context).textTheme.bodySmall
+                              ?.copyWith(fontSize: 12.sF, color: Colors.white),
                         ),
                       ],
                     ),
@@ -438,21 +440,27 @@ class AdvancedExamples extends StatelessWidget {
             Text(
               'Dynamic Padding Calculator',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 4.sH),
             Text(
               'Padding adapts based on screen size',
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 12.sF,
-                    color: Colors.grey[600],
-                  ),
+                fontSize: 12.sF,
+                color: Colors.grey[600],
+              ),
             ),
             SizedBox(height: 16.sH),
             Container(
-              padding: EdgeInsets.all(context.isMobile ? 12.0 : context.isTablet ? 16.0 : 24.0),
+              padding: EdgeInsets.all(
+                context.isMobile
+                    ? 12.0
+                    : context.isTablet
+                    ? 16.0
+                    : 24.0,
+              ),
               decoration: BoxDecoration(
                 color: Colors.teal.shade50,
                 border: Border.all(color: Colors.teal.shade200),
@@ -462,25 +470,33 @@ class AdvancedExamples extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Dynamic Padding: ${(context.isMobile ? 12.0 : context.isTablet ? 16.0 : 24.0).toStringAsFixed(1)}',
+                    'Dynamic Padding: ${(context.isMobile
+                        ? 12.0
+                        : context.isTablet
+                        ? 16.0
+                        : 24.0).toStringAsFixed(1)}',
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          fontSize: 14.sF,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      fontSize: 14.sF,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   SizedBox(height: 8.sH),
                   Text(
                     'Scale Factor: ${config.widthScaleFactor.toStringAsFixed(4)}',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 12.sF,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(fontSize: 12.sF),
                   ),
                   SizedBox(height: 8.sH),
                   Text(
-                    'Actual Padding: ${((context.isMobile ? 12.0 : context.isTablet ? 16.0 : 24.0) * config.widthScaleFactor).toStringAsFixed(2)}px',
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontSize: 12.sF,
-                        ),
+                    'Actual Padding: ${((context.isMobile
+                            ? 12.0
+                            : context.isTablet
+                            ? 16.0
+                            : 24.0) * config.widthScaleFactor).toStringAsFixed(2)}px',
+                    style: Theme.of(
+                      context,
+                    ).textTheme.bodySmall?.copyWith(fontSize: 12.sF),
                   ),
                 ],
               ),
@@ -488,7 +504,13 @@ class AdvancedExamples extends StatelessWidget {
             SizedBox(height: 12.sH),
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(context.isMobile ? 12.0.sW : context.isTablet ? 16.0.sW : 24.0.sW),
+              padding: EdgeInsets.all(
+                context.isMobile
+                    ? 12.0.sW
+                    : context.isTablet
+                    ? 16.0.sW
+                    : 24.0.sW,
+              ),
               decoration: BoxDecoration(
                 color: Colors.teal.shade100,
                 borderRadius: BorderRadius.circular(8),
@@ -496,9 +518,9 @@ class AdvancedExamples extends StatelessWidget {
               child: Text(
                 'This container has responsive padding that scales with screen size',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      fontSize: 14.sF,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(fontSize: 14.sF),
               ),
             ),
           ],

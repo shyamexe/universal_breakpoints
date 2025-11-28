@@ -182,42 +182,50 @@ extension ResponsiveExtensions on BuildContext {
 
   bool get isUltraCompact {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.ultraCompact;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.ultraCompact;
   }
 
   bool get isCompactPhone {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.compact;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.compact;
   }
 
   bool get isStandardPhone {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.standard;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.standard;
   }
 
   bool get isLargePhone {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.large;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.large;
   }
 
   bool get isPhablet {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.extraLarge;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.extraLarge;
   }
 
   bool get isSmallTablet {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.smallTablet;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.smallTablet;
   }
 
   bool get isStandardTablet {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.standardTablet;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.standardTablet;
   }
 
   bool get isLargeTablet {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.largeTablet;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.largeTablet;
   }
 
   bool get isExtraLargeTablet {
@@ -228,7 +236,8 @@ extension ResponsiveExtensions on BuildContext {
 
   bool get isSmallDesktop {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.smallDesktop;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.smallDesktop;
   }
 
   bool get isStandardDesktop {
@@ -239,7 +248,8 @@ extension ResponsiveExtensions on BuildContext {
 
   bool get isLargeDesktop {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.largeDesktop;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.largeDesktop;
   }
 
   bool get isExtraLargeDesktop {
@@ -250,27 +260,32 @@ extension ResponsiveExtensions on BuildContext {
 
   bool get isWidescreen {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.widescreen;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.widescreen;
   }
 
   bool get isFullHD {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.fullHD;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.fullHD;
   }
 
   bool get isQHD {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.qhd;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.qhd;
   }
 
   bool get isUltraWide {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.ultraWide;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.ultraWide;
   }
 
   bool get isUltraHD {
     MediaQuery.of(this);
-    return UniversalBreakpoints().screenSizeSubCategory == ScreenSizeSubCategory.ultraHD;
+    return UniversalBreakpoints().screenSizeSubCategory ==
+        ScreenSizeSubCategory.ultraHD;
   }
 
   bool get isSuperUltraWide {

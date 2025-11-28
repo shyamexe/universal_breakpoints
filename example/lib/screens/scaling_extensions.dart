@@ -15,9 +15,9 @@ class ScalingExtensions extends StatelessWidget {
             Text(
               'Scaling Extensions',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 24.sH),
             _buildScalingFactorCard(context),
@@ -47,9 +47,9 @@ class ScalingExtensions extends StatelessWidget {
             Text(
               'Scaling Extensions Guide',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildScalingGuideItem(
@@ -92,17 +92,17 @@ class ScalingExtensions extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 13.sF,
-                fontWeight: FontWeight.bold,
-                color: Colors.orange.shade900,
-              ),
+            fontSize: 13.sF,
+            fontWeight: FontWeight.bold,
+            color: Colors.orange.shade900,
+          ),
         ),
         SizedBox(height: 4.sH),
         Text(
           description,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontSize: 11.sF,
-                color: Colors.grey.shade700,
+            fontSize: 11.sF,
+            color: Colors.grey.shade700,
           ),
         ),
       ],
@@ -121,9 +121,9 @@ class ScalingExtensions extends StatelessWidget {
             Text(
               'Current Scaling Factors',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildFactorRow(
@@ -147,11 +147,7 @@ class ScalingExtensions extends StatelessWidget {
     );
   }
 
-  Widget _buildFactorRow(
-    BuildContext context,
-    String label,
-    double value,
-  ) {
+  Widget _buildFactorRow(BuildContext context, String label, double value) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 12.0.sH),
       child: Row(
@@ -159,9 +155,9 @@ class ScalingExtensions extends StatelessWidget {
         children: [
           Text(
             label,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontSize: 14.sF,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(fontSize: 14.sF),
           ),
           Container(
             padding: EdgeInsets.symmetric(
@@ -176,10 +172,10 @@ class ScalingExtensions extends StatelessWidget {
             child: Text(
               value.toStringAsFixed(4),
               style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    fontSize: 12.sF,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue.shade900,
-                  ),
+                fontSize: 12.sF,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue.shade900,
+              ),
             ),
           ),
         ],
@@ -197,9 +193,9 @@ class ScalingExtensions extends StatelessWidget {
             Text(
               'Font Size Scaling (sF)',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildScaledTextExample(context, 12, 'Small'),
@@ -242,25 +238,22 @@ class ScalingExtensions extends StatelessWidget {
                 Text(
                   label,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        fontSize: 11.sF,
-                        color: Colors.grey[600],
-                      ),
+                    fontSize: 11.sF,
+                    color: Colors.grey[600],
+                  ),
                 ),
                 Text(
                   '$baseSize px base → ${scaled.toStringAsFixed(2)} px scaled',
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        fontSize: 11.sF,
-                        color: Colors.grey[600],
-                      ),
+                    fontSize: 11.sF,
+                    color: Colors.grey[600],
+                  ),
                 ),
               ],
             ),
           ),
           SizedBox(width: 12.sW),
-          Text(
-            'Text',
-            style: TextStyle(fontSize: baseSize.sF),
-          ),
+          Text('Text', style: TextStyle(fontSize: baseSize.sF)),
         ],
       ),
     );
@@ -276,9 +269,9 @@ class ScalingExtensions extends StatelessWidget {
             Text(
               'Width & Height Scaling (sW, sH)',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildScaledBox(context, 'Small', 100, 50),
@@ -304,9 +297,9 @@ class ScalingExtensions extends StatelessWidget {
         Text(
           label,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontSize: 12.sF,
-                color: Colors.grey[600],
-              ),
+            fontSize: 12.sF,
+            color: Colors.grey[600],
+          ),
         ),
         SizedBox(height: 6.sH),
         Container(
@@ -322,9 +315,9 @@ class ScalingExtensions extends StatelessWidget {
             child: Text(
               '${width.toStringAsFixed(0)} × ${height.toStringAsFixed(0)}',
               style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    fontSize: 10.sF,
-                    color: Colors.white,
-                  ),
+                fontSize: 10.sF,
+                color: Colors.white,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -343,9 +336,9 @@ class ScalingExtensions extends StatelessWidget {
             Text(
               'Line Height Calculation (sFh)',
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             _buildLineHeightExample(context, 14),
@@ -377,9 +370,9 @@ class ScalingExtensions extends StatelessWidget {
           Text(
             'Font size: ${fontSize.sF.toStringAsFixed(2)}px, Line height: ${height.toStringAsFixed(3)}',
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  fontSize: 11.sF,
-                  color: Colors.grey[600],
-                ),
+              fontSize: 11.sF,
+              color: Colors.grey[600],
+            ),
           ),
           SizedBox(height: 8.sH),
           Container(
@@ -391,10 +384,7 @@ class ScalingExtensions extends StatelessWidget {
             ),
             child: Text(
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.',
-              style: TextStyle(
-                fontSize: fontSize.sF,
-                height: height,
-              ),
+              style: TextStyle(fontSize: fontSize.sF, height: height),
             ),
           ),
         ],

@@ -32,9 +32,9 @@ class BreakpointsShowcase extends StatelessWidget {
             Text(
               'Screen Breakpoints',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 16.sH),
             Card(
@@ -46,20 +46,48 @@ class BreakpointsShowcase extends StatelessWidget {
                     Text(
                       'Current Screen Metrics',
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontSize: 18.sF,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        fontSize: 18.sF,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     SizedBox(height: 12.sH),
-                    _buildInfoRow(context, 'Screen Width', '${config.screenWidth.toStringAsFixed(2)} px'),
-                    _buildInfoRow(context, 'Screen Height', '${config.screenHeight.toStringAsFixed(2)} px'),
-                    _buildInfoRow(context, 'Aspect Ratio', config.aspectRatio.toStringAsFixed(2)),
-                    _buildInfoRow(context, 'Text Scale Factor', '${config.textScaleFactor.toStringAsFixed(3)}x'),
-                    _buildInfoRow(context, 'Width Scale Factor', '${config.widthScaleFactor.toStringAsFixed(3)}x'),
+                    _buildInfoRow(
+                      context,
+                      'Screen Width',
+                      '${config.screenWidth.toStringAsFixed(2)} px',
+                    ),
+                    _buildInfoRow(
+                      context,
+                      'Screen Height',
+                      '${config.screenHeight.toStringAsFixed(2)} px',
+                    ),
+                    _buildInfoRow(
+                      context,
+                      'Aspect Ratio',
+                      config.aspectRatio.toStringAsFixed(2),
+                    ),
+                    _buildInfoRow(
+                      context,
+                      'Text Scale Factor',
+                      '${config.textScaleFactor.toStringAsFixed(3)}x',
+                    ),
+                    _buildInfoRow(
+                      context,
+                      'Width Scale Factor',
+                      '${config.widthScaleFactor.toStringAsFixed(3)}x',
+                    ),
                     Divider(height: 16.sH),
                     _buildInfoRow(context, 'Screen Type', config.screenType),
-                    _buildInfoRow(context, 'Category', config.screenSizeCategory.name.toUpperCase()),
-                    _buildInfoRow(context, 'Sub-Category', config.screenSizeSubCategory.name),
+                    _buildInfoRow(
+                      context,
+                      'Category',
+                      config.screenSizeCategory.name.toUpperCase(),
+                    ),
+                    _buildInfoRow(
+                      context,
+                      'Sub-Category',
+                      config.screenSizeSubCategory.name,
+                    ),
                   ],
                 ),
               ),
@@ -68,9 +96,9 @@ class BreakpointsShowcase extends StatelessWidget {
             Text(
               'Breakpoint Thresholds',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 12.sH),
             GridView.count(
@@ -84,23 +112,63 @@ class BreakpointsShowcase extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                _buildBreakpointCard(context, 'XXS', ScreenBreakpoints.xxs, ScreenSizeCategory.xxs),
-                _buildBreakpointCard(context, 'XS', ScreenBreakpoints.xs, ScreenSizeCategory.xs),
-                _buildBreakpointCard(context, 'SM', ScreenBreakpoints.sm, ScreenSizeCategory.sm),
-                _buildBreakpointCard(context, 'MD', ScreenBreakpoints.md, ScreenSizeCategory.md),
-                _buildBreakpointCard(context, 'LG', ScreenBreakpoints.lg, ScreenSizeCategory.lg),
-                _buildBreakpointCard(context, 'XL', ScreenBreakpoints.xl, ScreenSizeCategory.xl),
-                _buildBreakpointCard(context, 'XXL', ScreenBreakpoints.xxl, ScreenSizeCategory.xxl),
-                _buildBreakpointCard(context, 'XXXL', ScreenBreakpoints.xxxl, ScreenSizeCategory.xxxl),
+                _buildBreakpointCard(
+                  context,
+                  'XXS',
+                  ScreenBreakpoints.xxs,
+                  ScreenSizeCategory.xxs,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'XS',
+                  ScreenBreakpoints.xs,
+                  ScreenSizeCategory.xs,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'SM',
+                  ScreenBreakpoints.sm,
+                  ScreenSizeCategory.sm,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'MD',
+                  ScreenBreakpoints.md,
+                  ScreenSizeCategory.md,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'LG',
+                  ScreenBreakpoints.lg,
+                  ScreenSizeCategory.lg,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'XL',
+                  ScreenBreakpoints.xl,
+                  ScreenSizeCategory.xl,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'XXL',
+                  ScreenBreakpoints.xxl,
+                  ScreenSizeCategory.xxl,
+                ),
+                _buildBreakpointCard(
+                  context,
+                  'XXXL',
+                  ScreenBreakpoints.xxxl,
+                  ScreenSizeCategory.xxxl,
+                ),
               ],
             ),
             SizedBox(height: 24.sH),
             Text(
               'Current Category Indicator',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 12.sH),
             Container(
@@ -114,10 +182,10 @@ class BreakpointsShowcase extends StatelessWidget {
                 child: Text(
                   config.screenSizeCategory.name.toUpperCase(),
                   style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                        color: Colors.white,
-                        fontSize: 32.sF,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    color: Colors.white,
+                    fontSize: 32.sF,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -125,9 +193,9 @@ class BreakpointsShowcase extends StatelessWidget {
             Text(
               'How to Use Breakpoints',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 12.sH),
             Card(
@@ -182,18 +250,18 @@ class BreakpointsShowcase extends StatelessWidget {
         Text(
           title,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontSize: 14.sF,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue.shade900,
-              ),
+            fontSize: 14.sF,
+            fontWeight: FontWeight.bold,
+            color: Colors.blue.shade900,
+          ),
         ),
         SizedBox(height: 4.sH),
         Text(
           description,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                fontSize: 12.sF,
-                color: Colors.grey.shade700,
-              ),
+            fontSize: 12.sF,
+            color: Colors.grey.shade700,
+          ),
         ),
       ],
     );
@@ -207,16 +275,16 @@ class BreakpointsShowcase extends StatelessWidget {
         children: [
           Text(
             label,
-            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontSize: 14.sF,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontSize: 14.sF),
           ),
           Text(
             value,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontSize: 14.sF,
-                  fontWeight: FontWeight.bold,
-                ),
+              fontSize: 14.sF,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       ),
@@ -242,7 +310,9 @@ class BreakpointsShowcase extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: _getCategoryColor(category).withValues(alpha: isActive ? 0.2 : 0.05),
+          color: _getCategoryColor(
+            category,
+          ).withValues(alpha: isActive ? 0.2 : 0.05),
         ),
         child: Center(
           child: Column(
@@ -251,17 +321,17 @@ class BreakpointsShowcase extends StatelessWidget {
               Text(
                 name,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontSize: 18.sF,
-                      fontWeight: FontWeight.bold,
-                      color: _getCategoryColor(category),
-                    ),
+                  fontSize: 18.sF,
+                  fontWeight: FontWeight.bold,
+                  color: _getCategoryColor(category),
+                ),
               ),
               SizedBox(height: 4.sH),
               Text(
                 '${value.toStringAsFixed(0)} px',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontSize: 12.sF,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(fontSize: 12.sF),
               ),
             ],
           ),

@@ -15,9 +15,9 @@ class ResponsiveLayouts extends StatelessWidget {
             Text(
               'Responsive Layouts',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontSize: 24.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 24.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 24.sH),
             _buildSection(
@@ -69,17 +69,17 @@ class ResponsiveLayouts extends StatelessWidget {
             Text(
               title,
               style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 18.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                fontSize: 18.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             SizedBox(height: 4.sH),
             Text(
               description,
               style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    fontSize: 12.sF,
-                    color: Colors.grey[600],
-                  ),
+                fontSize: 12.sF,
+                color: Colors.grey[600],
+              ),
             ),
             SizedBox(height: 16.sH),
             content,
@@ -109,20 +109,17 @@ class ResponsiveLayouts extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
             gradient: LinearGradient(
-              colors: [
-                Colors.blue.shade300,
-                Colors.blue.shade600,
-              ],
+              colors: [Colors.blue.shade300, Colors.blue.shade600],
             ),
           ),
           child: Center(
             child: Text(
               'Item ${index + 1}',
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.white,
-                    fontSize: 14.sF,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: Colors.white,
+                fontSize: 14.sF,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -134,8 +131,8 @@ class ResponsiveLayouts extends StatelessWidget {
     return context.isMobile
         ? _buildMobileLayout(context)
         : context.isTablet
-            ? _buildTabletLayout(context)
-            : _buildDesktopLayout(context);
+        ? _buildTabletLayout(context)
+        : _buildDesktopLayout(context);
   }
 
   Widget _buildMobileLayout(BuildContext context) {
@@ -206,7 +203,12 @@ class ResponsiveLayouts extends StatelessWidget {
   }
 
   Widget _buildResponsiveSpacing(BuildContext context) {
-    final padding = context.isMobile ? 12.0 : context.isTablet ? 16.0 : 24.0;
+    final padding =
+        context.isMobile
+            ? 12.0
+            : context.isTablet
+            ? 16.0
+            : 24.0;
 
     return Container(
       padding: EdgeInsets.all(padding.sW),
@@ -219,17 +221,21 @@ class ResponsiveLayouts extends StatelessWidget {
         children: [
           Text(
             'Current Padding: ${padding.toStringAsFixed(1)} * sW = ${(padding * context.sizeConfig.widthScaleFactor).toStringAsFixed(1)} px',
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  fontSize: 12.sF,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall?.copyWith(fontSize: 12.sF),
           ),
           SizedBox(height: 12.sH),
           Text(
-            'Device Type: ${context.isMobile ? 'Mobile' : context.isTablet ? 'Tablet' : 'Desktop'}',
+            'Device Type: ${context.isMobile
+                ? 'Mobile'
+                : context.isTablet
+                ? 'Tablet'
+                : 'Desktop'}',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  fontSize: 14.sF,
-                  fontWeight: FontWeight.bold,
-                ),
+              fontSize: 14.sF,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           SizedBox(height: 12.sH),
           Container(
@@ -242,9 +248,9 @@ class ResponsiveLayouts extends StatelessWidget {
             child: Center(
               child: Text(
                 'Responsive Content Area',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontSize: 14.sF,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(fontSize: 14.sF),
               ),
             ),
           ),
@@ -265,10 +271,10 @@ class ResponsiveLayouts extends StatelessWidget {
         child: Text(
           text,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white,
-                fontSize: 16.sF,
-                fontWeight: FontWeight.bold,
-              ),
+            color: Colors.white,
+            fontSize: 16.sF,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
@@ -278,53 +284,37 @@ class ResponsiveLayouts extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildPracticalCard(
-          context,
-          '📱 Example 1: Product Card',
-          [
-            'Mobile: Single column, image on top',
-            'Tablet: 2-column layout with side-by-side arrangement',
-            'Desktop: 3-4 columns with hover effects',
-            '',
-            'Use: context.responsiveValue<int>(mobile: 1, tablet: 2, desktop: 4)',
-          ],
-        ),
+        _buildPracticalCard(context, '📱 Example 1: Product Card', [
+          'Mobile: Single column, image on top',
+          'Tablet: 2-column layout with side-by-side arrangement',
+          'Desktop: 3-4 columns with hover effects',
+          '',
+          'Use: context.responsiveValue<int>(mobile: 1, tablet: 2, desktop: 4)',
+        ]),
         SizedBox(height: 12.sH),
-        _buildPracticalCard(
-          context,
-          '📊 Example 2: Dashboard Layout',
-          [
-            'Mobile: Stacked widgets, single column',
-            'Tablet: 2 columns for charts and stats',
-            'Desktop: 3-4 columns with sidebar navigation',
-            '',
-            'Use: if (context.isDesktop) showSidebar() else showBottomNav()',
-          ],
-        ),
+        _buildPracticalCard(context, '📊 Example 2: Dashboard Layout', [
+          'Mobile: Stacked widgets, single column',
+          'Tablet: 2 columns for charts and stats',
+          'Desktop: 3-4 columns with sidebar navigation',
+          '',
+          'Use: if (context.isDesktop) showSidebar() else showBottomNav()',
+        ]),
         SizedBox(height: 12.sH),
-        _buildPracticalCard(
-          context,
-          '🎨 Example 3: Typography',
-          [
-            'Mobile: 14sp base, 24sp headings',
-            'Tablet: 16sp base, 28sp headings',
-            'Desktop: 18sp base, 32sp headings',
-            '',
-            'Use: Text(style: TextStyle(fontSize: 16.sF))',
-          ],
-        ),
+        _buildPracticalCard(context, '🎨 Example 3: Typography', [
+          'Mobile: 14sp base, 24sp headings',
+          'Tablet: 16sp base, 28sp headings',
+          'Desktop: 18sp base, 32sp headings',
+          '',
+          'Use: Text(style: TextStyle(fontSize: 16.sF))',
+        ]),
         SizedBox(height: 12.sH),
-        _buildPracticalCard(
-          context,
-          '🔲 Example 4: Padding & Margins',
-          [
-            'Mobile: 12-16dp padding',
-            'Tablet: 16-24dp padding',
-            'Desktop: 24-32dp padding',
-            '',
-            'Use: Padding(padding: EdgeInsets.all(16.0.sW))',
-          ],
-        ),
+        _buildPracticalCard(context, '🔲 Example 4: Padding & Margins', [
+          'Mobile: 12-16dp padding',
+          'Tablet: 16-24dp padding',
+          'Desktop: 24-32dp padding',
+          '',
+          'Use: Padding(padding: EdgeInsets.all(16.0.sW))',
+        ]),
       ],
     );
   }
@@ -347,10 +337,10 @@ class ResponsiveLayouts extends StatelessWidget {
           Text(
             title,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontSize: 13.sF,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey.shade900,
-                ),
+              fontSize: 13.sF,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey.shade900,
+            ),
           ),
           SizedBox(height: 8.sH),
           ...points.map((point) {
@@ -362,9 +352,9 @@ class ResponsiveLayouts extends StatelessWidget {
               child: Text(
                 point,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontSize: 11.sF,
-                      color: Colors.grey.shade700,
-                    ),
+                  fontSize: 11.sF,
+                  color: Colors.grey.shade700,
+                ),
               ),
             );
           }),
