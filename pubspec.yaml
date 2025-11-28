@@ -4,8 +4,7 @@ version: 1.0.0
 homepage: https://github.com/shyamexe/universal_breakpoints
 repository: https://github.com/shyamexe/universal_breakpoints
 issue_tracker: https://github.com/shyamexe/universal_breakpoints/issues
-documentation: https://shyamexe.github.io/universal_breakpoints/
-publish_to: 'https://pub.dev'
+documentation: https://shyamexe.github.io/universal_breakpoints/ 
 
 environment:
   sdk: ^3.7.2
