@@ -1,11 +1,11 @@
 {
-    "name": "universal_breakpoints_example",
-    "short_name": "universal_breakpoints_example",
+    "name": "Universal Breakpoints",
+    "short_name": "UB",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
+    "background_color": "#ffffff",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A simple, reusable, and platform-independent screen size breakpoints package for Flutter. Provides responsive design utilities for all platforms.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
