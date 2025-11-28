@@ -2,21 +2,21 @@
 
 A simple, reusable, and platform-independent screen size breakpoints package for Flutter. Provides responsive design utilities for Android, iOS, Web, Windows, macOS, and Linux.
 
-## Features
+## ✨ Features
 
-- 🎯 **Platform Agnostic**: Works seamlessly on all Flutter platforms (Android, iOS, Web, Windows, macOS, Linux)
-- 📱 **8 Main Breakpoint Categories**: From ultra-small phones to 4K+ displays
-- 🎨 **19 Ultra-Granular Sub-Categories**: Fine-grained control over specific device types
-- 📐 **Automatic Scaling**: Built-in scaling factors for fonts, widths, and heights
-- 🔄 **Responsive Extensions**: Convenient BuildContext and num extensions
-- 🧭 **Orientation Detection**: Portrait/landscape and aspect ratio helpers
-- 🎭 **Singleton Pattern**: Single instance for consistent state across your app
+- **Platform Agnostic**: Works seamlessly on all Flutter platforms (Android, iOS, Web, Windows, macOS, Linux)
+- **8 Main Breakpoint Categories**: From ultra-small phones to 4K+ displays
+- **19 Ultra-Granular Sub-Categories**: Fine-grained control over specific device types
+- **Automatic Scaling**: Built-in scaling factors for fonts, widths, and heights
+- **Responsive Extensions**: Convenient BuildContext and num extensions
+- **Orientation Detection**: Portrait/landscape and aspect ratio helpers
+- **Singleton Pattern**: Single instance for consistent state across your app
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Installation
 
-Add this to your `pubspec.yaml`:
+Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
@@ -31,7 +31,7 @@ flutter pub get
 
 ### Basic Setup
 
-Initialize the package in your main app widget:
+Initialize in your main app widget:
 
 ```dart
 import 'package:universal_breakpoints/universal_breakpoints.dart';
@@ -54,11 +54,9 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-## Usage
+## 💻 Usage
 
-### 1. Using BuildContext Extensions
-
-The simplest way to use responsive design:
+### 1. BuildContext Extensions
 
 ```dart
 class MyHome extends StatelessWidget {
@@ -76,7 +74,7 @@ class MyHome extends StatelessWidget {
 }
 ```
 
-### 2. Conditional Rendering Based on Device Type
+### 2. Conditional Rendering
 
 ```dart
 class ResponsiveWidget extends StatelessWidget {
@@ -86,12 +84,9 @@ class ResponsiveWidget extends StatelessWidget {
       padding: EdgeInsets.all(context.isDesktop ? 32 : 16),
       child: Column(
         children: [
-          if (context.isMobile)
-            Text('Mobile View'),
-          if (context.isTablet)
-            Text('Tablet View'),
-          if (context.isDesktop)
-            Text('Desktop View'),
+          if (context.isMobile) Text('Mobile View'),
+          if (context.isTablet) Text('Tablet View'),
+          if (context.isDesktop) Text('Desktop View'),
         ],
       ),
     );
@@ -99,7 +94,7 @@ class ResponsiveWidget extends StatelessWidget {
 }
 ```
 
-### 3. Responsive Values with Fallback
+### 3. Responsive Values
 
 ```dart
 class GridLayout extends StatelessWidget {
@@ -120,7 +115,7 @@ class GridLayout extends StatelessWidget {
 }
 ```
 
-### 4. Responsive Scaling with Extensions
+### 4. Scaling Extensions
 
 ```dart
 class ScaledText extends StatelessWidget {
@@ -130,15 +125,15 @@ class ScaledText extends StatelessWidget {
       children: [
         Text(
           'Large Title',
-          style: TextStyle(fontSize: 32.sF), // Scaled font size
+          style: TextStyle(fontSize: 32.sF),
         ),
         Text(
           'Body Text',
           style: TextStyle(fontSize: 16.sF, height: 16.sFh),
         ),
         SizedBox(
-          width: 200.sW,  // Scaled width
-          height: 100.sH, // Scaled height
+          width: 200.sW,
+          height: 100.sH,
           child: Container(),
         ),
       ],
@@ -160,35 +155,34 @@ class OrientationAwareWidget extends StatelessWidget {
 }
 ```
 
-## Available Properties and Methods
+## 📖 API Reference
 
 ### Screen Size Categories
 
 ```dart
-// Main categories
-context.isXXS   // Extra extra small (< 360px)
-context.isXS    // Extra small (360-479px)
-context.isSM    // Small (480-767px)
-context.isMD    // Medium (768-1023px)
-context.isLG    // Large (1024-1279px)
-context.isXL    // Extra large (1280-1439px)
-context.isXXL   // Extra extra large (1440-1919px)
-context.isXXXL  // Ultra large (1920+px)
+context.isXXS    // Extra extra small (< 360px)
+context.isXS     // Extra small (360-479px)
+context.isSM     // Small (480-767px)
+context.isMD     // Medium (768-1023px)
+context.isLG     // Large (1024-1279px)
+context.isXL     // Extra large (1280-1439px)
+context.isXXL    // Extra extra large (1440-1919px)
+context.isXXXL   // Ultra large (1920+px)
 ```
 
 ### Device Type Detection
 
 ```dart
-context.isMobile        // < 768px
-context.isTablet        // 768-1279px
-context.isDesktop       // 1280+px
-context.isLargeScreen   // 1440+px
+context.isMobile      // < 768px
+context.isTablet      // 768-1279px
+context.isDesktop     // 1280+px
+context.isLargeScreen // 1440+px
 ```
 
 ### Ultra-Granular Sub-Categories
 
 ```dart
-context.isUltraCompact       // < 320px (very small phones)
+context.isUltraCompact       // < 320px
 context.isCompactPhone       // 320-374px
 context.isStandardPhone      // 375-413px
 context.isLargePhone         // 414-479px
@@ -209,60 +203,58 @@ context.isUltraHD            // 3440-3839px
 context.isSuperUltraWide     // 3840+px
 ```
 
-### Orientation and Aspect Ratio
+### Orientation & Aspect Ratio
 
 ```dart
-context.isPortrait              // Height > Width
-context.isLandscape             // Width > Height
-context.isUltraWideAspect       // Aspect ratio > 2.0
-context.isStandardAspect        // Aspect ratio 1.3-1.8
-context.isTallAspect            // Aspect ratio < 1.3
+context.isPortrait         // Height > Width
+context.isLandscape        // Width > Height
+context.isUltraWideAspect  // Aspect ratio > 2.0
+context.isStandardAspect   // Aspect ratio 1.3-1.8
+context.isTallAspect       // Aspect ratio < 1.3
 ```
 
 ### Scaling Extensions
 
 ```dart
-// On any num (int or double)
-int scaledSize = 16.sF;   // Scaled font size
-double scaledW = 100.sW;  // Scaled width
-double scaledH = 50.sH;   // Scaled height
-double lineH = 14.sFh;    // Calculated line height
+16.sF   // Scaled font size
+100.sW  // Scaled width
+50.sH   // Scaled height
+14.sFh  // Calculated line height
 ```
 
 ### Direct Access
 
 ```dart
-UniversalBreakpoints config = UniversalBreakpoints();
+final config = UniversalBreakpoints();
 
-config.screenWidth            // Current screen width
-config.screenHeight           // Current screen height
-config.textScaleFactor        // Font scaling factor
-config.widthScaleFactor       // Width scaling factor
-config.heightScaleFactor      // Height scaling factor
-config.screenType             // Type as string
-config.screenSizeCategory     // Main category
-config.screenSizeSubCategory  // Sub-category
+config.screenWidth          // Current screen width
+config.screenHeight         // Current screen height
+config.textScaleFactor      // Font scaling factor
+config.widthScaleFactor     // Width scaling factor
+config.heightScaleFactor    // Height scaling factor
+config.screenType           // Type as string
+config.screenSizeCategory   // Main category
+config.screenSizeSubCategory // Sub-category
 
-// Scaling methods
-config.scaledFontSize(16)    // Returns scaled font size
-config.scaledWidth(100)      // Returns scaled width
-config.scaledHeight(50)      // Returns scaled height
+config.scaledFontSize(16)   // Scale font size
+config.scaledWidth(100)     // Scale width
+config.scaledHeight(50)     // Scale height
 ```
 
-## Breakpoint Values
+## 📏 Breakpoint Values
 
-| Category | Breakpoint | Range | Description |
-|----------|-----------|-------|-------------|
-| xxs | 360px | 0-359px | Extra extra small phones |
-| xs | 480px | 360-479px | Extra small phones |
-| sm | 768px | 480-767px | Small devices (large phones) |
-| md | 1024px | 768-1023px | Medium (tablets) |
-| lg | 1280px | 1024-1279px | Large tablets/small desktops |
-| xl | 1440px | 1280-1439px | Extra large desktops |
-| xxl | 1920px | 1440-1919px | Extra extra large desktops |
-| xxxl | 2560px | 1920+px | Ultra large (4K+) |
+| Category | Breakpoint | Range | Purpose |
+|----------|-----------|-------|---------|
+| **xxs** | 360px | 0-359px | Extra small phones |
+| **xs** | 480px | 360-479px | Small phones |
+| **sm** | 768px | 480-767px | Large phones |
+| **md** | 1024px | 768-1023px | Tablets |
+| **lg** | 1280px | 1024-1279px | Large tablets/desktops |
+| **xl** | 1440px | 1280-1439px | Desktop |
+| **xxl** | 1920px | 1440-1919px | Large desktop |
+| **xxxl** | 2560px | 1920+px | 4K+ displays |
 
-## Advanced Examples
+## 🎯 Advanced Examples
 
 ### Complex Responsive Layout
 
@@ -343,40 +335,41 @@ class AdaptiveNavigation extends StatelessWidget {
 }
 ```
 
-## Backwards Compatibility
+## ↩️ Backwards Compatibility
 
-For code using the old `SizeConfig` name, a typedef is provided:
+For code using the old `SizeConfig` name:
 
 ```dart
 typedef SizeConfig = UniversalBreakpoints;
 
-// Both work identically
-SizeConfig().init(context);
-UniversalBreakpoints().init(context);
+SizeConfig().init(context);       // Still works
+UniversalBreakpoints().init(context); // New name
 ```
 
-## Platform Support
+## ✅ Platform Support
 
-- ✅ Android
-- ✅ iOS
-- ✅ Web
-- ✅ Windows
-- ✅ macOS
-- ✅ Linux
+- **Android**
+- **iOS**
+- **Web** (Chrome, Firefox, Safari, Edge)
+- **Windows**
+- **macOS**
+- **Linux**
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
-
-## License
-
-This package is licensed under the MIT License - see the LICENSE file for details.
-
-## Additional Information
+## 📦 Package Info
 
 - **Minimal Dependencies**: Only depends on Flutter
 - **Zero Configuration**: Works out of the box
-- **Fully Documented**: Complete API documentation
 - **Production Ready**: Used in multiple production applications
+- **Fully Documented**: Complete API documentation
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues for bugs and feature requests.
+
+## 📄 License
+
+MIT License - See LICENSE file for details.
+
+---
 
 For more information, visit [pub.dev](https://pub.dev/packages/universal_breakpoints)
