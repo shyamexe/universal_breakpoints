@@ -1,5 +1,9 @@
 # Universal Breakpoints
 
+<div align="center">
+  <img src="example/assets/icon.png" alt="Universal Breakpoints" width="120" height="120">
+</div>
+
 A simple, reusable, and platform-independent screen size breakpoints package for Flutter. Provides responsive design utilities for Android, iOS, Web, Windows, macOS, and Linux.
 
 ## ✨ Features
