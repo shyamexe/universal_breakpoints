@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:universal_breakpoints/universal_breakpoints.dart';
+import 'docs_example.dart';
 import 'breakpoints_showcase.dart';
 import 'responsive_layouts.dart';
 import 'device_detection.dart';
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> screens = [
+    const DocsExample(),
     const BreakpointsShowcase(),
     const ResponsiveLayouts(),
     const DeviceDetection(),
@@ -25,6 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   final List<String> screenTitles = [
+    'Documentation',
     'Breakpoints',
     'Responsive Layouts',
     'Device Detection',
@@ -39,33 +42,40 @@ class _HomeScreenState extends State<HomeScreen> {
       body: screens[_selectedIndex],
       bottomNavigationBar:
           context.isMobile
-              ? BottomNavigationBar(
-                currentIndex: _selectedIndex,
-                onTap: (index) {
-                  setState(() => _selectedIndex = index);
-                },
-                items: const [
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.straighten),
-                    label: 'Breakpoints',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.dashboard),
-                    label: 'Responsive',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.phone_android),
-                    label: 'Devices',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.text_fields),
-                    label: 'Scaling',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(Icons.stars),
-                    label: 'Advanced',
-                  ),
-                ],
+              ? SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: BottomNavigationBar(
+                  currentIndex: _selectedIndex,
+                  onTap: (index) {
+                    setState(() => _selectedIndex = index);
+                  },
+                  items: const [
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.description),
+                      label: 'Docs',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.straighten),
+                      label: 'Breakpoints',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.dashboard),
+                      label: 'Responsive',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.phone_android),
+                      label: 'Devices',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.text_fields),
+                      label: 'Scaling',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.stars),
+                      label: 'Advanced',
+                    ),
+                  ],
+                ),
               )
               : null,
       drawer:
@@ -78,6 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     setState(() => _selectedIndex = index);
                   },
                   destinations: [
+                    NavigationRailDestination(
+                      icon: const Icon(Icons.description),
+                      label: const Text('Documentation'),
+                    ),
                     NavigationRailDestination(
                       icon: const Icon(Icons.straighten),
                       label: const Text('Breakpoints'),
