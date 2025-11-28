@@ -11,8 +11,8 @@
     For more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-    This is a placeholder for base href that will be replaced by Flutter Web
-    when building for deployment to a subpath.
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
   -->
   <base href="/universal_breakpoints/">
 
@@ -21,70 +21,18 @@
   <meta name="description" content="A new Flutter project.">
 
   <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="universal_breakpoints">
+  <meta name="apple-mobile-web-app-title" content="universal_breakpoints_example">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>universal_breakpoints</title>
+  <title>universal_breakpoints_example</title>
   <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" type="text/css" href="splash/style.css">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="color-scheme" content="light dark">
-  <meta name="msapplication-TileColor" content="#2d2d2d">
-  <meta name="msapplication-config" content="icons/browserconfig.xml">
-  <meta name="msapplication-TileImage" content="icons/msapplication-icon-144x144.png">
-
-  <style id="splash-screen-style">
-    html {
-      height: 100%
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      overscroll-behavior: none;
-      display: flex;
-      flex-direction: column;
-      min-height: 100%;
-      font-family: system-ui, -apple-system, sans-serif;
-      background: #fff;
-      color: #000;
-    }
-
-    #loading {
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      width: 100%;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: #202124;
-        color: #fff;
-      }
-    }
-
-    @media (prefers-color-scheme: light) {
-      body {
-        background: #fff;
-        color: #000;
-      }
-    }
-  </style>
 </head>
 <body>
-  <div id="loading"></div>
-  <script>
-    window.addEventListener('load', function(ev) {
-      document.getElementById("loading").remove();
-    });
-  </script>
-  <script src="flutter.js" defer></script>
+  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
