@@ -4,7 +4,7 @@ version: 1.1.1
 homepage: https://github.com/shyamexe/universal_breakpoints
 repository: https://github.com/shyamexe/universal_breakpoints
 issue_tracker: https://github.com/shyamexe/universal_breakpoints/issues
-documentation: https://shyamexe.github.io/universal_breakpoints/ 
+documentation: https://universal-breakpoints.vercel.app
 
 environment:
   sdk: ^3.7.2

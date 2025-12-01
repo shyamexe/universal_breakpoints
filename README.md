@@ -21,9 +21,10 @@ A simple, reusable, and platform-independent screen size breakpoints package for
 - **Animated Grids**: Multiple animation styles for grid item entrance effects
 - **Zero External Dependencies**: All grid features use only Flutter's built-in widgets
 
-## 🎨 Demo
+## 🎨 Demo & Documentation
 
-Check out the **[Live Demo](https://shyamexe.github.io/universal_breakpoints/)** to see Universal Breakpoints in action!
+- **[📚 Full Documentation](https://universal-breakpoints.vercel.app)** - Complete API reference, guides, and examples
+- **[🎮 Interactive Demo](https://shyamexe.github.io/universal_breakpoints/)** - Try Universal Breakpoints in action
 
 ## 🚀 Getting Started
 
