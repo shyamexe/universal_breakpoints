@@ -578,22 +578,27 @@ class _MasonryLayout extends StatelessWidget {
       );
     }
 
+    final columnList = List.generate(columns, (columnIndex) {
+      return Padding(
+        padding: EdgeInsets.only(
+          right: columnIndex < columns - 1 ? crossAxisSpacing : 0,
+        ),
+        child: ClipRect(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: columnWidgets[columnIndex],
+          ),
+        ),
+      );
+    });
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
-        children: List.generate(columns, (columnIndex) {
-          return Padding(
-            padding: EdgeInsets.only(
-              right: columnIndex < columns - 1 ? crossAxisSpacing : 0,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: columnWidgets[columnIndex],
-            ),
-          );
-        }),
+        children: columnList,
       ),
     );
   }

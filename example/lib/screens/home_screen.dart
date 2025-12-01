@@ -6,6 +6,7 @@ import 'responsive_layouts.dart';
 import 'device_detection.dart';
 import 'scaling_extensions.dart';
 import 'advanced_examples.dart';
+import 'grid_examples.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
     const ResponsiveLayouts(),
     const DeviceDetection(),
     const ScalingExtensions(),
+    const GridExamples(),
     const AdvancedExamples(),
   ];
 
@@ -32,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     'Responsive Layouts',
     'Device Detection',
     'Scaling Extensions',
+    'Grid Systems',
     'Advanced Examples',
   ];
 
@@ -42,44 +45,43 @@ class _HomeScreenState extends State<HomeScreen> {
       body: screens[_selectedIndex],
       bottomNavigationBar:
           context.isMobile
-              ? SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minWidth: MediaQuery.of(context).size.width,
-                  ),
-                  child: BottomNavigationBar(
-                    currentIndex: _selectedIndex,
-                    onTap: (index) {
-                      setState(() => _selectedIndex = index);
-                    },
-                    items: const [
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.description),
-                        label: 'Docs',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.straighten),
-                        label: 'Breakpoints',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.dashboard),
-                        label: 'Responsive',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.phone_android),
-                        label: 'Devices',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.text_fields),
-                        label: 'Scaling',
-                      ),
-                      BottomNavigationBarItem(
-                        icon: Icon(Icons.stars),
-                        label: 'Advanced',
-                      ),
-                    ],
-                  ),
+              ? SizedBox(
+                width: MediaQuery.of(context).size.width,
+                child: BottomNavigationBar(
+                  currentIndex: _selectedIndex,
+                  onTap: (index) {
+                    setState(() => _selectedIndex = index);
+                  },
+                  items: const [
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.description),
+                      label: 'Docs',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.straighten),
+                      label: 'Breakpoints',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.dashboard),
+                      label: 'Responsive',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.phone_android),
+                      label: 'Devices',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.text_fields),
+                      label: 'Scaling',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.grid_3x3),
+                      label: 'Grid',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.stars),
+                      label: 'Advanced',
+                    ),
+                  ],
                 ),
               )
               : null,
@@ -112,6 +114,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     NavigationRailDestination(
                       icon: const Icon(Icons.text_fields),
                       label: const Text('Scaling'),
+                    ),
+                    NavigationRailDestination(
+                      icon: const Icon(Icons.grid_3x3),
+                      label: const Text('Grid'),
                     ),
                     NavigationRailDestination(
                       icon: const Icon(Icons.stars),
