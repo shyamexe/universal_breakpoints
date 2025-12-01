@@ -3,3 +3,4 @@ export 'src/breakpoints.dart';
 export 'src/enums.dart';
 export 'src/extensions.dart';
 export 'src/responsive_wrapper.dart';
+export 'src/dynamic_grid.dart';

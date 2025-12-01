@@ -67,7 +67,8 @@ class _DocsExampleState extends State<DocsExample> {
           _buildSubCategoryInfo(),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Usage Example'),
-          _CodeBlock(code: '''// Check screen size
+          _CodeBlock(
+            code: '''// Check screen size
 if (UniversalBreakpoints().isMobile) {
   // Mobile layout
 } else if (UniversalBreakpoints().isTablet) {
@@ -79,7 +80,8 @@ if (UniversalBreakpoints().isMobile) {
 // Or use context extensions
 if (context.isMobile) {
   return MobileLayout();
-}'''),
+}''',
+          ),
         ],
       ),
     );
@@ -113,37 +115,104 @@ if (context.isMobile) {
     final subCategory = config.screenSizeSubCategory;
 
     final categories = [
-      ('Ultra Compact', '< 320px', subCategory == ScreenSizeSubCategory.ultraCompact),
+      (
+        'Ultra Compact',
+        '< 320px',
+        subCategory == ScreenSizeSubCategory.ultraCompact,
+      ),
       ('Compact', '320 - 374px', subCategory == ScreenSizeSubCategory.compact),
-      ('Standard Phone', '375 - 413px', subCategory == ScreenSizeSubCategory.standard),
-      ('Large Phone', '414 - 479px', subCategory == ScreenSizeSubCategory.large),
-      ('Phablet', '480 - 567px', subCategory == ScreenSizeSubCategory.extraLarge),
-      ('Small Tablet', '568 - 667px', subCategory == ScreenSizeSubCategory.smallTablet),
-      ('Standard Tablet', '668 - 767px', subCategory == ScreenSizeSubCategory.standardTablet),
-      ('Large Tablet', '768 - 833px', subCategory == ScreenSizeSubCategory.largeTablet),
-      ('Extra Large Tablet', '834 - 1023px', subCategory == ScreenSizeSubCategory.extraLargeTablet),
-      ('Small Desktop', '1024 - 1279px', subCategory == ScreenSizeSubCategory.smallDesktop),
-      ('Standard Desktop', '1280 - 1365px', subCategory == ScreenSizeSubCategory.standardDesktop),
-      ('Large Desktop', '1366 - 1439px', subCategory == ScreenSizeSubCategory.largeDesktop),
-      ('Extra Large Desktop', '1440 - 1535px', subCategory == ScreenSizeSubCategory.extraLargeDesktop),
-      ('Widescreen', '1536 - 1679px', subCategory == ScreenSizeSubCategory.widescreen),
+      (
+        'Standard Phone',
+        '375 - 413px',
+        subCategory == ScreenSizeSubCategory.standard,
+      ),
+      (
+        'Large Phone',
+        '414 - 479px',
+        subCategory == ScreenSizeSubCategory.large,
+      ),
+      (
+        'Phablet',
+        '480 - 567px',
+        subCategory == ScreenSizeSubCategory.extraLarge,
+      ),
+      (
+        'Small Tablet',
+        '568 - 667px',
+        subCategory == ScreenSizeSubCategory.smallTablet,
+      ),
+      (
+        'Standard Tablet',
+        '668 - 767px',
+        subCategory == ScreenSizeSubCategory.standardTablet,
+      ),
+      (
+        'Large Tablet',
+        '768 - 833px',
+        subCategory == ScreenSizeSubCategory.largeTablet,
+      ),
+      (
+        'Extra Large Tablet',
+        '834 - 1023px',
+        subCategory == ScreenSizeSubCategory.extraLargeTablet,
+      ),
+      (
+        'Small Desktop',
+        '1024 - 1279px',
+        subCategory == ScreenSizeSubCategory.smallDesktop,
+      ),
+      (
+        'Standard Desktop',
+        '1280 - 1365px',
+        subCategory == ScreenSizeSubCategory.standardDesktop,
+      ),
+      (
+        'Large Desktop',
+        '1366 - 1439px',
+        subCategory == ScreenSizeSubCategory.largeDesktop,
+      ),
+      (
+        'Extra Large Desktop',
+        '1440 - 1535px',
+        subCategory == ScreenSizeSubCategory.extraLargeDesktop,
+      ),
+      (
+        'Widescreen',
+        '1536 - 1679px',
+        subCategory == ScreenSizeSubCategory.widescreen,
+      ),
       ('Full HD', '1680 - 1919px', subCategory == ScreenSizeSubCategory.fullHD),
       ('QHD', '1920 - 2559px', subCategory == ScreenSizeSubCategory.qhd),
-      ('Ultra Wide', '2560 - 3439px', subCategory == ScreenSizeSubCategory.ultraWide),
-      ('Ultra HD (4K)', '3440 - 3839px', subCategory == ScreenSizeSubCategory.ultraHD),
-      ('Super Ultra Wide (5K+)', '3840+px', subCategory == ScreenSizeSubCategory.superUltraWide),
+      (
+        'Ultra Wide',
+        '2560 - 3439px',
+        subCategory == ScreenSizeSubCategory.ultraWide,
+      ),
+      (
+        'Ultra HD (4K)',
+        '3440 - 3839px',
+        subCategory == ScreenSizeSubCategory.ultraHD,
+      ),
+      (
+        'Super Ultra Wide (5K+)',
+        '3840+px',
+        subCategory == ScreenSizeSubCategory.superUltraWide,
+      ),
     ];
 
     return Wrap(
       spacing: 8,
       runSpacing: 8,
-      children: categories
-          .map((cat) => _SubCategoryChip(
-                label: cat.$1,
-                range: cat.$2,
-                isActive: cat.$3,
-              ))
-          .toList(),
+      children:
+          categories
+              .map(
+                (cat) => _SubCategoryChip(
+                  label: cat.$1,
+                  range: cat.$2,
+                  isActive: cat.$3,
+                ),
+              )
+              .toList(),
     );
   }
 
@@ -181,7 +250,8 @@ if (context.isMobile) {
           ),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Code Examples'),
-          _CodeBlock(code: '''// Using singleton
+          _CodeBlock(
+            code: '''// Using singleton
 if (UniversalBreakpoints().isMobile) {
   print('Mobile Device');
 }
@@ -197,7 +267,8 @@ if (context.isMobile) {
 
 // Quick access
 bool isDesktop = context.isDesktop;
-bool isLargeScreen = context.isLargeScreen;'''),
+bool isLargeScreen = context.isLargeScreen;''',
+          ),
         ],
       ),
     );
@@ -238,7 +309,8 @@ bool isLargeScreen = context.isLargeScreen;'''),
           ),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Code Examples'),
-          _CodeBlock(code: '''// Portrait/Landscape check
+          _CodeBlock(
+            code: '''// Portrait/Landscape check
 if (context.isPortrait) {
   // Portrait layout
   return Column(children: [...]);
@@ -254,7 +326,8 @@ if (context.isTallAspect) {
 
 if (context.isUltraWideAspect) {
   // Ultra wide display handling
-}'''),
+}''',
+          ),
         ],
       ),
     );
@@ -285,7 +358,8 @@ if (context.isUltraWideAspect) {
           ),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Extension Methods'),
-          _CodeBlock(code: '''// Scaled font size
+          _CodeBlock(
+            code: '''// Scaled font size
 Text(
   'Hello World',
   style: TextStyle(
@@ -306,7 +380,8 @@ Text(
     fontSize: 14.sF,
     height: 14.sFh,
   ),
-)'''),
+)''',
+          ),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Interactive Example'),
           _ScalingExampleCard(),
@@ -322,7 +397,8 @@ Text(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _SectionHeader(title: 'Responsive Value Method'),
-          _CodeBlock(code: '''// Basic usage
+          _CodeBlock(
+            code: '''// Basic usage
 int columns = context.responsiveValue<int>(
   mobile: 1,
   tablet: 2,
@@ -342,13 +418,15 @@ var padding = context.responsiveValue<double>(
   mobile: 8,
   desktop: 24,
   // Falls back to desktop if tablet not specified
-);'''),
+);''',
+          ),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Available Breakpoints'),
           const _ResponsiveValueTable(),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Complete Example'),
-          _CodeBlock(code: '''class ResponsiveGrid extends StatelessWidget {
+          _CodeBlock(
+            code: '''class ResponsiveGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -382,10 +460,12 @@ var padding = context.responsiveValue<double>(
       ),
     );
   }
-}'''),
+}''',
+          ),
           const SizedBox(height: 24),
           _SectionHeader(title: 'Responsive Widget Layout'),
-          _CodeBlock(code: '''class ResponsiveLayout extends StatelessWidget {
+          _CodeBlock(
+            code: '''class ResponsiveLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (context.isMobile) {
@@ -423,7 +503,8 @@ class FlexibleLayout extends StatelessWidget {
       ],
     );
   }
-}'''),
+}''',
+          ),
         ],
       ),
     );
@@ -464,9 +545,7 @@ class _InfoBox extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
+        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -509,14 +588,16 @@ class _BreakpointCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: isActive
-            ? Theme.of(context).colorScheme.primaryContainer
-            : Theme.of(context).colorScheme.surfaceContainer,
+        color:
+            isActive
+                ? Theme.of(context).colorScheme.primaryContainer
+                : Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: isActive
-              ? Theme.of(context).colorScheme.primary
-              : Theme.of(context).colorScheme.outlineVariant,
+          color:
+              isActive
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.outlineVariant,
           width: isActive ? 2 : 1,
         ),
       ),
@@ -530,17 +611,19 @@ class _BreakpointCard extends StatelessWidget {
                   label,
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: isActive
-                        ? Theme.of(context).colorScheme.onPrimaryContainer
-                        : Theme.of(context).colorScheme.onSurface,
+                    color:
+                        isActive
+                            ? Theme.of(context).colorScheme.onPrimaryContainer
+                            : Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
                 Text(
                   description,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: isActive
-                        ? Theme.of(context).colorScheme.onPrimaryContainer
-                        : Theme.of(context).colorScheme.onSurfaceVariant,
+                    color:
+                        isActive
+                            ? Theme.of(context).colorScheme.onPrimaryContainer
+                            : Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                 ),
               ],
@@ -549,9 +632,10 @@ class _BreakpointCard extends StatelessWidget {
           Text(
             range,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: isActive
-                  ? Theme.of(context).colorScheme.onPrimaryContainer
-                  : Theme.of(context).colorScheme.onSurface,
+              color:
+                  isActive
+                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      : Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ],
@@ -576,14 +660,16 @@ class _SubCategoryChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: isActive
-            ? Theme.of(context).colorScheme.primaryContainer
-            : Theme.of(context).colorScheme.surfaceContainer,
+        color:
+            isActive
+                ? Theme.of(context).colorScheme.primaryContainer
+                : Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isActive
-              ? Theme.of(context).colorScheme.primary
-              : Theme.of(context).colorScheme.outlineVariant,
+          color:
+              isActive
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.outlineVariant,
         ),
       ),
       child: Column(
@@ -593,17 +679,19 @@ class _SubCategoryChip extends StatelessWidget {
             label,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
               fontWeight: FontWeight.bold,
-              color: isActive
-                  ? Theme.of(context).colorScheme.onPrimaryContainer
-                  : Theme.of(context).colorScheme.onSurface,
+              color:
+                  isActive
+                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      : Theme.of(context).colorScheme.onSurface,
             ),
           ),
           Text(
             range,
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
-              color: isActive
-                  ? Theme.of(context).colorScheme.onPrimaryContainer
-                  : Theme.of(context).colorScheme.onSurfaceVariant,
+              color:
+                  isActive
+                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      : Theme.of(context).colorScheme.onSurfaceVariant,
             ),
           ),
         ],
@@ -631,14 +719,16 @@ class _DeviceTypeCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isActive
-            ? Theme.of(context).colorScheme.primaryContainer
-            : Theme.of(context).colorScheme.surfaceContainer,
+        color:
+            isActive
+                ? Theme.of(context).colorScheme.primaryContainer
+                : Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: isActive
-              ? Theme.of(context).colorScheme.primary
-              : Theme.of(context).colorScheme.outlineVariant,
+          color:
+              isActive
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.outlineVariant,
           width: isActive ? 2 : 1,
         ),
       ),
@@ -647,9 +737,10 @@ class _DeviceTypeCard extends StatelessWidget {
           Icon(
             icon,
             size: 28,
-            color: isActive
-                ? Theme.of(context).colorScheme.onPrimaryContainer
-                : Theme.of(context).colorScheme.onSurface,
+            color:
+                isActive
+                    ? Theme.of(context).colorScheme.onPrimaryContainer
+                    : Theme.of(context).colorScheme.onSurface,
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -660,17 +751,19 @@ class _DeviceTypeCard extends StatelessWidget {
                   label,
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: isActive
-                        ? Theme.of(context).colorScheme.onPrimaryContainer
-                        : Theme.of(context).colorScheme.onSurface,
+                    color:
+                        isActive
+                            ? Theme.of(context).colorScheme.onPrimaryContainer
+                            : Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
                 Text(
                   description,
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                    color: isActive
-                        ? Theme.of(context).colorScheme.onPrimaryContainer
-                        : Theme.of(context).colorScheme.onSurfaceVariant,
+                    color:
+                        isActive
+                            ? Theme.of(context).colorScheme.onPrimaryContainer
+                            : Theme.of(context).colorScheme.onSurfaceVariant,
                   ),
                 ),
               ],
@@ -712,14 +805,16 @@ class _AspectRatioCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isActive
-            ? Theme.of(context).colorScheme.primaryContainer
-            : Theme.of(context).colorScheme.surfaceContainer,
+        color:
+            isActive
+                ? Theme.of(context).colorScheme.primaryContainer
+                : Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: isActive
-              ? Theme.of(context).colorScheme.primary
-              : Theme.of(context).colorScheme.outlineVariant,
+          color:
+              isActive
+                  ? Theme.of(context).colorScheme.primary
+                  : Theme.of(context).colorScheme.outlineVariant,
           width: isActive ? 2 : 1,
         ),
       ),
@@ -730,18 +825,20 @@ class _AspectRatioCard extends StatelessWidget {
             label,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               fontWeight: FontWeight.bold,
-              color: isActive
-                  ? Theme.of(context).colorScheme.onPrimaryContainer
-                  : Theme.of(context).colorScheme.onSurface,
+              color:
+                  isActive
+                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      : Theme.of(context).colorScheme.onSurface,
             ),
           ),
           const SizedBox(height: 4),
           Text(
             description,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: isActive
-                  ? Theme.of(context).colorScheme.onPrimaryContainer
-                  : Theme.of(context).colorScheme.onSurfaceVariant,
+              color:
+                  isActive
+                      ? Theme.of(context).colorScheme.onPrimaryContainer
+                      : Theme.of(context).colorScheme.onSurfaceVariant,
             ),
           ),
         ],
@@ -769,9 +866,7 @@ class _ScaleFactorCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
+        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -822,9 +917,7 @@ class _CodeBlock extends StatelessWidget {
       decoration: BoxDecoration(
         color: isDark ? Colors.grey[900] : Colors.grey[50],
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
+        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
       ),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
@@ -854,9 +947,7 @@ class _ScalingExampleCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.surfaceContainer,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
+        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -874,16 +965,8 @@ class _ScalingExampleCard extends StatelessWidget {
             base: baseFontSize,
             scaled: baseFontSize.sF,
           ),
-          _ScalingRow(
-            label: 'Width',
-            base: baseWidth,
-            scaled: baseWidth.sW,
-          ),
-          _ScalingRow(
-            label: 'Height',
-            base: baseHeight,
-            scaled: baseHeight.sH,
-          ),
+          _ScalingRow(label: 'Width', base: baseWidth, scaled: baseWidth.sW),
+          _ScalingRow(label: 'Height', base: baseHeight, scaled: baseHeight.sH),
         ],
       ),
     );
@@ -939,19 +1022,32 @@ class _ResponsiveValueTable extends StatelessWidget {
           color: Theme.of(context).colorScheme.outlineVariant,
         ),
         children: [
-          _buildTableRow(
-            context,
-            ['Breakpoint', 'Width Range', 'Method'],
-            isHeader: true,
-          ),
+          _buildTableRow(context, [
+            'Breakpoint',
+            'Width Range',
+            'Method',
+          ], isHeader: true),
           _buildTableRow(context, ['Small Mobile', '< 320px', 'smallMobile']),
-          _buildTableRow(context, ['Large Mobile', '414 - 479px', 'largeMobile']),
-          _buildTableRow(context, ['Small Tablet', '568 - 667px', 'smallTablet']),
-          _buildTableRow(context, ['Large Tablet', '768 - 1023px', 'largeTablet']),
-          _buildTableRow(
-            context,
-            ['Small Desktop', '1024 - 1279px', 'smallDesktop'],
-          ),
+          _buildTableRow(context, [
+            'Large Mobile',
+            '414 - 479px',
+            'largeMobile',
+          ]),
+          _buildTableRow(context, [
+            'Small Tablet',
+            '568 - 667px',
+            'smallTablet',
+          ]),
+          _buildTableRow(context, [
+            'Large Tablet',
+            '768 - 1023px',
+            'largeTablet',
+          ]),
+          _buildTableRow(context, [
+            'Small Desktop',
+            '1024 - 1279px',
+            'smallDesktop',
+          ]),
           _buildTableRow(context, ['Large Desktop', '1366+px', 'largeDesktop']),
           _buildTableRow(context, ['Ultra Wide', '2560+px', 'ultraWide']),
           _buildTableRow(context, ['Mobile (fallback)', 'Any', 'mobile']),
@@ -968,31 +1064,35 @@ class _ResponsiveValueTable extends StatelessWidget {
     bool isHeader = false,
   }) {
     return TableRow(
-      decoration: isHeader
-          ? BoxDecoration(
-              color: Theme.of(context).colorScheme.primaryContainer,
-            )
-          : null,
-      children: cells
-          .map(
-            (cell) => Padding(
-              padding: const EdgeInsets.all(8),
-              child: Text(
-                cell,
-                style: isHeader
-                    ? Theme.of(context).textTheme.bodySmall?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context)
-                              .colorScheme
-                              .onPrimaryContainer,
-                        )
-                    : Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Theme.of(context).colorScheme.onSurface,
-                        ),
-              ),
-            ),
-          )
-          .toList(),
+      decoration:
+          isHeader
+              ? BoxDecoration(
+                color: Theme.of(context).colorScheme.primaryContainer,
+              )
+              : null,
+      children:
+          cells
+              .map(
+                (cell) => Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Text(
+                    cell,
+                    style:
+                        isHeader
+                            ? Theme.of(context).textTheme.bodySmall?.copyWith(
+                              fontWeight: FontWeight.bold,
+                              color:
+                                  Theme.of(
+                                    context,
+                                  ).colorScheme.onPrimaryContainer,
+                            )
+                            : Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: Theme.of(context).colorScheme.onSurface,
+                            ),
+                  ),
+                ),
+              )
+              .toList(),
     );
   }
 }

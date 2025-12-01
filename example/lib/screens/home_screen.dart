@@ -44,37 +44,42 @@ class _HomeScreenState extends State<HomeScreen> {
           context.isMobile
               ? SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: BottomNavigationBar(
-                  currentIndex: _selectedIndex,
-                  onTap: (index) {
-                    setState(() => _selectedIndex = index);
-                  },
-                  items: const [
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.description),
-                      label: 'Docs',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.straighten),
-                      label: 'Breakpoints',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.dashboard),
-                      label: 'Responsive',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.phone_android),
-                      label: 'Devices',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.text_fields),
-                      label: 'Scaling',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.stars),
-                      label: 'Advanced',
-                    ),
-                  ],
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minWidth: MediaQuery.of(context).size.width,
+                  ),
+                  child: BottomNavigationBar(
+                    currentIndex: _selectedIndex,
+                    onTap: (index) {
+                      setState(() => _selectedIndex = index);
+                    },
+                    items: const [
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.description),
+                        label: 'Docs',
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.straighten),
+                        label: 'Breakpoints',
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.dashboard),
+                        label: 'Responsive',
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.phone_android),
+                        label: 'Devices',
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.text_fields),
+                        label: 'Scaling',
+                      ),
+                      BottomNavigationBarItem(
+                        icon: Icon(Icons.stars),
+                        label: 'Advanced',
+                      ),
+                    ],
+                  ),
                 ),
               )
               : null,

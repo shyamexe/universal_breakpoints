@@ -1,6 +1,6 @@
 name: universal_breakpoints
 description: "A simple, reusable, and platform-independent screen size breakpoints package for Flutter. Provides responsive design utilities for Android, iOS, Web, Windows, macOS, and Linux."
-version: 1.0.1
+version: 1.1.0
 homepage: https://github.com/shyamexe/universal_breakpoints
 repository: https://github.com/shyamexe/universal_breakpoints
 issue_tracker: https://github.com/shyamexe/universal_breakpoints/issues

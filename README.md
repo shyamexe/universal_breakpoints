@@ -16,6 +16,10 @@ A simple, reusable, and platform-independent screen size breakpoints package for
 - **Responsive Extensions**: Convenient BuildContext and num extensions
 - **Orientation Detection**: Portrait/landscape and aspect ratio helpers
 - **Singleton Pattern**: Single instance for consistent state across your app
+- **Dynamic Grid System**: Responsive grid widgets with auto-adjusting columns, spacing, and animations
+- **Masonry Layouts**: Pinterest-style masonry grid for varied item sizes
+- **Animated Grids**: Multiple animation styles for grid item entrance effects
+- **Zero External Dependencies**: All grid features use only Flutter's built-in widgets
 
 ## 🎨 Demo
 
@@ -391,6 +395,187 @@ class AdaptiveNavigation extends StatelessWidget {
         ],
       );
     }
+  }
+}
+```
+
+## 🔲 Dynamic Grid System
+
+Universal Breakpoints includes a powerful dynamic grid system with multiple responsive grid widgets. All features use only Flutter's built-in widgets—no external dependencies required.
+
+### Basic Dynamic Grid
+
+The `DynamicGrid` widget automatically adjusts columns, spacing, and sizing based on screen breakpoints.
+
+```dart
+DynamicGrid(
+  items: List.generate(12, (index) => index),
+  itemBuilder: (context, item, index) {
+    return Card(
+      child: Center(child: Text('Item ${index + 1}')),
+    );
+  },
+  columnConfig: GridColumnConfig(
+    smallMobile: 1,
+    mobile: 1,
+    largeMobile: 2,
+    tablet: 3,
+    desktop: 4,
+    largeDesktop: 6,
+  ),
+  spacingConfig: GridSpacingConfig(
+    smallMobile: 8,
+    mobile: 12,
+    tablet: 16,
+    desktop: 24,
+  ),
+  enableAnimations: true,
+)
+```
+
+**Features:**
+- Auto-adjusting column count per breakpoint
+- Responsive item spacing
+- Smooth animations on layout changes
+- Customizable aspect ratio for items
+- Optional SliverGrid support for custom scroll behavior
+
+### Masonry Grid
+
+Create Pinterest-style masonry layouts that adapt to different screen sizes.
+
+```dart
+MasonryDynamicGrid(
+  items: List.generate(20, (index) => index),
+  itemBuilder: (context, item, index) {
+    return Card(child: Center(child: Text('$item')));
+  },
+  columnConfig: GridColumnConfig(
+    mobile: 2,
+    tablet: 3,
+    desktop: 4,
+  ),
+  spacingConfig: GridSpacingConfig(defaultSpacing: 12),
+)
+```
+
+**Features:**
+- Natural column-based masonry layout
+- Responsive column count
+- Flexible item heights
+- Smooth animations
+
+### Animated Grid
+
+Display grid items with smooth entrance animations. Choose from multiple animation styles.
+
+```dart
+AnimatedDynamicGrid(
+  items: List.generate(12, (index) => index),
+  itemBuilder: (context, item, index) {
+    return Card(child: Center(child: Text('Item $index')));
+  },
+  columnConfig: GridColumnConfig(
+    mobile: 1,
+    tablet: 2,
+    desktop: 3,
+  ),
+  itemStyle: AnimatedGridItemStyle.fadeAndScale,
+  animationDuration: const Duration(milliseconds: 500),
+)
+```
+
+**Animation Styles:**
+- `scaleIn`: Items scale up on entrance
+- `fadeIn`: Items fade in smoothly
+- `slideInFromLeft`: Items slide from the left
+- `slideInFromTop`: Items slide from the top
+- `fadeAndScale`: Combined fade and scale effect
+
+### Grid Configuration
+
+#### GridColumnConfig
+Fine-tune column counts for each device size:
+
+```dart
+GridColumnConfig(
+  ultraCompact: 1,
+  compact: 1,
+  standard: 2,
+  largePhone: 2,
+  phablet: 2,
+  smallTablet: 3,
+  largeTablet: 3,
+  smallDesktop: 4,
+  standardDesktop: 5,
+  largeDesktop: 6,
+  ultraWide: 8,
+)
+```
+
+#### GridSpacingConfig
+Customize spacing at different breakpoints:
+
+```dart
+GridSpacingConfig(
+  ultraCompactSpacing: 4,
+  compactSpacing: 8,
+  standardSpacing: 12,
+  largePhoneSpacing: 12,
+  tabletSpacing: 16,
+  desktopSpacing: 24,
+  ultraWideSpacing: 40,
+)
+```
+
+### Dynamic Grid Properties
+
+```dart
+DynamicGrid(
+  items: [],                              // Required: List of items
+  itemBuilder: (context, item, i) {},     // Required: Widget builder
+  columnConfig: GridColumnConfig(...),    // Optional: Custom columns
+  spacingConfig: GridSpacingConfig(...),  // Optional: Custom spacing
+  itemAspectRatio: 1.0,                  // Default: square items
+  enableAnimations: true,                 // Default: true
+  animationDuration: Duration(...),       // Default: 300ms
+  animationCurve: Curves.easeInOut,      // Default curve
+  useSliverGrid: false,                  // Use SliverGrid instead
+  scrollPhysics: BouncingScrollPhysics(), // Scroll behavior
+  padding: EdgeInsets.all(16),           // Grid padding
+  mainAxisSpacing: 12,                   // Override spacing
+  crossAxisSpacing: 12,                  // Override spacing
+)
+```
+
+### Real-World Example
+
+```dart
+class ProductGrid extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return DynamicGrid(
+      items: products,
+      itemBuilder: (context, product, index) {
+        return ProductCard(product: product);
+      },
+      columnConfig: GridColumnConfig(
+        mobile: 1,
+        largeMobile: 2,
+        tablet: 3,
+        desktop: 4,
+        largeDesktop: 6,
+      ),
+      spacingConfig: GridSpacingConfig(
+        mobile: 8,
+        tablet: 12,
+        desktop: 16,
+        defaultSpacing: 12,
+      ),
+      itemAspectRatio: 0.75,
+      padding: EdgeInsets.all(16.0),
+      enableAnimations: true,
+    );
   }
 }
 ```

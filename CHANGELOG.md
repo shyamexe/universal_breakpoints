@@ -4,6 +4,43 @@ All notable changes to the Universal Breakpoints package will be documented in t
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - Dynamic Grid System
+
+### Added
+
+**Dynamic Grid Widgets:**
+- `DynamicGrid`: Responsive grid with auto-adjusting columns and spacing based on breakpoints
+- `MasonryDynamicGrid`: Pinterest-style masonry layouts with flexible item heights
+- `AnimatedDynamicGrid`: Grid items with smooth entrance animations (fadeIn, scaleIn, slideIn, fadeAndScale)
+
+**Grid Configuration:**
+- `GridColumnConfig`: Fine-tune column counts for each device size (11 breakpoint levels)
+- `GridSpacingConfig`: Customize spacing at different breakpoints
+- `AnimatedGridItemStyle`: Multiple animation styles for grid item entrance effects
+
+**Features:**
+- Fully responsive across all device sizes (mobile, tablet, desktop)
+- Zero external dependencies (uses only Flutter built-in widgets)
+- Smooth animations on layout changes
+- Customizable item aspect ratio
+- SliverGrid support for custom scroll behavior
+- Flexible padding and spacing options
+
+**Example Updates:**
+- Enhanced example app with grid demonstrations
+- Fixed BottomNavigationBar layout for mobile devices
+
+**Documentation:**
+- Added comprehensive Dynamic Grid System section in README.md (180+ lines)
+- Multiple real-world usage examples
+- Configuration guide for columns and spacing
+
+**Testing:**
+- Added `dynamic_grid_test.dart` with comprehensive test coverage
+
+### Fixed
+- BottomNavigationBar layout issue when using SingleChildScrollView in example app
+
 ## [1.0.1] - Initial Release
 
 ### Added
