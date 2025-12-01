@@ -63,6 +63,57 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+### Using ResponsiveWrapper for Dynamic Updates
+
+The **ResponsiveWrapper** widget automatically handles screen size changes and rebuilds your UI dynamically when the device is resized or rotated. This is especially useful for web applications and desktop apps where users can resize the window.
+
+Instead of manually initializing `UniversalBreakpoints` in each widget, wrap your app with `ResponsiveWrapper`:
+
+```dart
+import 'package:universal_breakpoints/universal_breakpoints.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ResponsiveWrapper(
+      config: ResponsiveWrapperConfig(
+        autoInitialize: true,
+        debugPrint: false,  // Set to true for resize debug logs
+      ),
+      child: MaterialApp(
+        title: 'My App',
+        home: const MyHome(),
+      ),
+    );
+  }
+}
+```
+
+**How it works:**
+- Automatically initializes `UniversalBreakpoints` on each rebuild
+- Listens to Flutter's `MediaQuery` system for screen size changes
+- Triggers widget rebuilds whenever the screen is resized or orientation changes
+- All descendant widgets automatically get responsive properties updated
+- Optional debug logging to monitor resize events
+
+**Example with debug enabled:**
+
+```dart
+ResponsiveWrapper(
+  config: ResponsiveWrapperConfig(
+    autoInitialize: true,
+    debugPrint: true,  // Logs resize events to console
+  ),
+  child: MyApp(),
+)
+```
+
 ## 💻 Usage
 
 ### 1. BuildContext Extensions
